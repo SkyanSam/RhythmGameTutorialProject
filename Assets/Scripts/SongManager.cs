@@ -35,7 +35,7 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
+        if (Application.platform == RuntimePlatform.Android || Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebsite());
         }
